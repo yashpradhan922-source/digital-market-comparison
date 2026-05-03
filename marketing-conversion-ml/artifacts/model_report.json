@@ -1,0 +1,70 @@
+{
+    "Random Forest": {
+        "accuracy": 0.8975,
+        "precision": 0.9162,
+        "recall": 0.9723,
+        "f1_score": 0.9434,
+        "roc_auc": 0.8127,
+        "confusion_matrix": [
+            [
+                69,
+                125
+            ],
+            [
+                39,
+                1367
+            ]
+        ]
+    },
+    "Gradient Boosting": {
+        "accuracy": 0.9137,
+        "precision": 0.9284,
+        "recall": 0.9772,
+        "f1_score": 0.9522,
+        "roc_auc": 0.8241,
+        "confusion_matrix": [
+            [
+                88,
+                106
+            ],
+            [
+                32,
+                1374
+            ]
+        ]
+    },
+    "Logistic Regression": {
+        "accuracy": 0.7256,
+        "precision": 0.9506,
+        "recall": 0.7255,
+        "f1_score": 0.8229,
+        "roc_auc": 0.7895,
+        "confusion_matrix": [
+            [
+                141,
+                53
+            ],
+            [
+                386,
+                1020
+            ]
+        ]
+    },
+    "XGBoost": {
+        "accuracy": 0.9125,
+        "precision": 0.926,
+        "recall": 0.9787,
+        "f1_score": 0.9516,
+        "roc_auc": 0.8322,
+        "confusion_matrix": [
+            [
+                84,
+                110
+            ],
+            [
+                30,
+                1376
+            ]
+        ]
+    }
+}

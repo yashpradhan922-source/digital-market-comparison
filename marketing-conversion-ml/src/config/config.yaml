@@ -1,0 +1,47 @@
+# config.yaml - Main configuration file for the Marketing Conversion ML pipeline
+# Contains all file paths, directory paths, and general settings
+
+# Data ingestion configuration - paths for raw and processed data
+data_ingestion:
+  raw_data_path: "data/raw/digital_marketing_campaign_dataset.csv"  # Path to the original CSV file
+  train_data_path: "data/processed/train.csv"  # Path to save the training data split
+  test_data_path: "data/processed/test.csv"  # Path to save the testing data split
+  test_size: 0.2  # Proportion of data to use for testing (20%)
+  random_state: 42  # Random seed for reproducible train-test splits
+
+# Data transformation configuration - paths for saving preprocessing artifacts
+data_transformation:
+  preprocessor_obj_file_path: "artifacts/preprocessor.pkl"  # Path to save the fitted preprocessing pipeline
+  scaler_file_path: "artifacts/scaler.pkl"  # Path to save the fitted scaler object
+  encoder_file_path: "artifacts/encoder.pkl"  # Path to save the fitted encoder object
+
+# Model trainer configuration - paths and settings for model training
+model_trainer:
+  trained_model_file_path: "artifacts/model.pkl"  # Path to save the trained model
+  model_report_path: "artifacts/model_report.json"  # Path to save model evaluation metrics
+
+# Feature configuration - define which columns to use
+features:
+  target_column: "Conversion"  # The target variable to predict (binary: 0 or 1)
+  drop_columns:  # Columns to exclude from features
+    - "CustomerID"  # Unique identifier, not useful for prediction
+    - "AdvertisingPlatform"  # Contains only 'IsConfid' - no useful variance
+    - "AdvertisingTool"  # Contains only 'ToolConfid' - no useful variance
+  numerical_columns:  # List of numerical feature columns
+    - "Age"
+    - "Income"
+    - "AdSpend"
+    - "ClickThroughRate"
+    - "ConversionRate"
+    - "WebsiteVisits"
+    - "PagesPerVisit"
+    - "TimeOnSite"
+    - "SocialShares"
+    - "EmailOpens"
+    - "EmailClicks"
+    - "PreviousPurchases"
+    - "LoyaltyPoints"
+  categorical_columns:  # List of categorical feature columns
+    - "Gender"
+    - "CampaignChannel"
+    - "CampaignType"

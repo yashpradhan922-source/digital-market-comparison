@@ -1,0 +1,39 @@
+# .gitignore - Files and directories to exclude from Git version control
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables (contains secrets)
+.env
+
+# Log files
+logs/
+
+# Model artifacts (too large for Git)
+artifacts/*.pkl
+
+# Processed data files
+data/processed/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
